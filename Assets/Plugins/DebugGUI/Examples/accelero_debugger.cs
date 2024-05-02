@@ -16,7 +16,7 @@ public class Data
 public class Accelero_debugger : MonoBehaviour
 {
     public string data;
-    public Connection Connect;
+    //public Connection Connect;
     public Data d;
     public static Data readJson(string data)
     {
@@ -75,7 +75,7 @@ public class Accelero_debugger : MonoBehaviour
         deltaTimeBuffer.Enqueue(Time.deltaTime);
 
 
-        data=Connect.data;
+       // data=Connect.data;
         d = readJson(data);
         acceleration = d.values[0];
 
