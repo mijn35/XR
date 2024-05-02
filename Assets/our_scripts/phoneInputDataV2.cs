@@ -18,7 +18,7 @@ public class WebSocketClient : MonoBehaviour
 
     private void Start()
     {
-        string url = "ws://192.168.90.203:8080/sensor/connect?type=android.sensor.accelerometer";
+        string url = "ws://192.168.90.203:8080/sensor/connect?type=android.sensor.orientation";
         Debug.Log("Connecting to: " + url);
 
         ws = new WebSocket(url);
