@@ -621,6 +621,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9014170783809206335, guid: f24cfaf0586bb9146a96d2c6e91b8762, type: 3}
   m_PrefabInstance: {fileID: 452463679}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &465530241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 465530243}
+  - component: {fileID: 465530242}
+  - component: {fileID: 465530244}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &465530242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465530241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f490fe8e46001343b9472f72bdff1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hipsTransform: {fileID: 1699978693}
+  IKHips: {fileID: 1502769288}
+--- !u!4 &465530243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465530241}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.8838153, y: -1.2172997, z: -2.711131}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &465530244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465530241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f0a3b06af09a947836ad02d07bf28b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hmdTransform: {fileID: 452463686}
+  model: {fileID: 649322149}
+  defaultHeight: 1.8
 --- !u!4 &536202843 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9014170785475729501, guid: f24cfaf0586bb9146a96d2c6e91b8762, type: 3}
@@ -1527,7 +1589,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7010cd1b13b2d459b2f87d4b0c56e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplier: 1
   ip: 192.168.141.184:8080
+  sensor: game_rotation_vector
 --- !u!114 &1502769288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1540,7 +1604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb22f0456a90244481bd8272a461c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSmoothness: 0.1
+  turnSmoothness: 0.3
   hips:
     phoneTarget: {fileID: 1585262668}
     ikTarget: {fileID: 1699978693}
@@ -2517,3 +2581,4 @@ SceneRoots:
   - {fileID: 1486049025}
   - {fileID: 2048411615}
   - {fileID: 430333292}
+  - {fileID: 465530243}

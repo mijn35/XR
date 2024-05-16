@@ -13,7 +13,8 @@ public class PhoneRotationController : MonoBehaviour
     private void ApplyRotation()
     {
         // Convert angles from degrees to quaternion for proper rotation
-        Quaternion targetRotation = Quaternion.Euler(WebSocketClient.pitch, WebSocketClient.yaw, WebSocketClient.roll); //data straight from WebSocektClient
+        //Quaternion targetRotation = Quaternion.Euler(WebSocketClient.pitch, WebSocketClient.yaw, WebSocketClient.roll); //data straight from WebSocektClient
+        Quaternion targetRotation = new Quaternion(WebSocketClient.theta, WebSocketClient.yaw, WebSocketClient.pitch, WebSocketClient.roll);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5);
     }
 }
