@@ -17,6 +17,7 @@ public class IKHipsTargetFollowPhoneRotation : MonoBehaviour
     [Range(0,1)]
     public float turnSmoothness = 0.1f;
     public PhoneMap hips;
+    public Quaternion forward;
 
     public float hipsBodyYawOffset;
 
@@ -25,7 +26,7 @@ public class IKHipsTargetFollowPhoneRotation : MonoBehaviour
     {
         float yaw = hips.phoneTarget.eulerAngles.y + hipsBodyYawOffset;
         transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.Euler(transform.eulerAngles.x, yaw, transform.eulerAngles.z),turnSmoothness);
-
+        forward = transform.rotation;
         hips.Map();
     }
 }
