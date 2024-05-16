@@ -5,6 +5,8 @@ public class BodyMover : MonoBehaviour
     public float moveDistanceMultiplier = 5.0f; // Distance to move each step
     public float moveSpeed = 1.0f;    // Speed of the movement
 
+    public Rigidbody body;
+
     private Vector3 targetPosition;   // Target position for movement
     private bool isMoving = false;    // Flag to check if the object is moving
     public stepCounterScript StepCounter;
