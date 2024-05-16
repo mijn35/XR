@@ -23,7 +23,7 @@ public class IKHipsTargetFollowPhoneRotation : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        float yaw = hips.phoneTarget.eulerAngles.y;
+        float yaw = hips.phoneTarget.eulerAngles.y + hipsBodyYawOffset;
         transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.Euler(transform.eulerAngles.x, yaw, transform.eulerAngles.z),turnSmoothness);
 
         hips.Map();
