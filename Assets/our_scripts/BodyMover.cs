@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BodyMover : MonoBehaviour
 {
-    public float moveDistanceMultiplier = 5.0f; // Distance to move each time
+    public float moveDistanceMultiplier = 5.0f; // Distance to move each step
     public float moveSpeed = 2.0f;    // Speed of the movement
 
     private Vector3 targetPosition;   // Target position for movement
@@ -17,9 +17,10 @@ public class BodyMover : MonoBehaviour
 
     void Update()
     {
+        moveDistance = StepCounter.newSteps * moveDistanceMultiplier;
         if (!isMoving)
         {
-            targetPosition = transform.position + transform.forward * moveDistance;
+            targetPosition = targetPosition + transform.forward * moveDistance;
             isMoving = true;
         }
 
