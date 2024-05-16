@@ -8,7 +8,7 @@ public class Connection : MonoBehaviour
     private void Start()
     {
         //string url = "ws://192.168.232.130:8088/sensor/connect?type=android.sensor.gyroscope";
-        string url = "ws://192.168.229.213:8088/sensors/connect?types=[\"android.sensor.gyroscope\",\"android.sensor.orientation\"]";
+        string url = "ws://192.168.2.100:8088/sensors/connect?types=[\"android.sensor.accelerometer\",\"android.sensor.orientation\"]";
         Debug.Log("Connecting to: " + url);
 
         ws = new WebSocket(url);
