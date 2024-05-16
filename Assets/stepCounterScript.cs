@@ -74,7 +74,7 @@ public class stepCounterScript : MonoBehaviour
                 temp2 =float.Parse(d.timestamp);
             }
 
-            if (i==true && float.Parse(d.timestamp) > temp1+1000000000 && float.Parse(d.timestamp) > temp2 + 500000000 && b<10)
+            if (i==true && float.Parse(d.timestamp) > temp1+750000000 && float.Parse(d.timestamp) > temp2 + 500000000 && b<10)
             {
                 step = false;
                 i = false;
