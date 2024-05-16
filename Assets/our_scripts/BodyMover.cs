@@ -7,17 +7,26 @@ public class BodyMover : MonoBehaviour
 
     private Vector3 targetPosition;   // Target position for movement
     private bool isMoving = false;    // Flag to check if the object is moving
-    public StepCounter StepCounter = GetComponent<StepCounter>();
-    private float moveDistance = StepCounter.newSteps * moveDistanceMultiplier;
+    public stepCounterScript StepCounter;
+    //private float moveDistance = StepCounter.newSteps * moveDistanceMultiplier;
+    private float moveDistance = 1;
     void Start()
     {
         // Initialize the target position to the current position
         targetPosition = transform.position;
+        StepCounter = GetComponent<stepCounterScript>();
     }
 
     void Update()
     {
-        moveDistance = StepCounter.newSteps * moveDistanceMultiplier;
+        if (StepCounter.step)
+        {
+            moveDistance = 1;
+        }
+        else
+        {
+            moveDistance = 0;
+        }
         if (!isMoving)
         {
             targetPosition = targetPosition + transform.forward * moveDistance;
@@ -33,6 +42,14 @@ public class BodyMover : MonoBehaviour
                 transform.position = targetPosition;
                 isMoving = false;
             }
+        }
+
+
+
+
+        if (StepCounter.step)
+        {
+            transform.position = transform.position + transform.forward * 0.05f;
         }
     }
 }
