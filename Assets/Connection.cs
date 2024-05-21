@@ -5,10 +5,12 @@ public class Connection : MonoBehaviour
     private WebSocket ws;
     public string data;
 
+    public string ip = "192.168.90.203:8080";
+
     private void Start()
     {
         //string url = "ws://192.168.232.130:8088/sensor/connect?type=android.sensor.gyroscope";
-        string url = "ws://192.168.2.100:8080/sensors/connect?types=[\"android.sensor.accelerometer\",\"android.sensor.orientation\"]";
+        string url = "ws://" + ip + "/sensors/connect?types=[\"android.sensor.accelerometer\",\"android.sensor.orientation\"]";
         Debug.Log("Connecting to: " + url);
 
         ws = new WebSocket(url);
